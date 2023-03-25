@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <!-- <style>
+        .text-center {
+            margin: auto;
+            margin-top: auto;
+        }
+    </style> -->
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only"></span></a>
+                <a class="nav-item nav-link" href="weather.html">Weather App <span class="sr-only"></span></a>
+                <a class="nav-item nav-link" id="logout"> Logout </a>
+            </div>
+        </div>
+    </nav>
+    <div class="text-center">
+        <h1>Hello Guys,</h1>
+        <h2>Welcome to the Weather App</h2>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+        window.onload = function () {
+            const islogin = localStorage.getItem("login");
+
+            if (islogin == 'true') {
+                console.log("user is logged in", islogin);
+
+            } else {
+                console.log("user is not logged in");
+                window.location.href = 'login.html';
+            }
+        }
+
+
+
+        document.getElementById("logout")
+            .addEventListener("click", function () {
+                // Your code to be executed on click
+                console.log("clicked");
+                try {
+                    localStorage.removeItem("login");
+                    window.location.href = "./login.html";
+                } catch (e) {
+                    console.log("failed to logout");
+                    alert("Please try again");
+                }
+            });
+
+
+    </script>
+</body>
+
+</html>

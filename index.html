@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet"> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            font-family: 'Quintessential', cursive;
+            background-color: #0093E9;
+            background-image: linear-gradient(310deg, #0093E9 0%, #80D0C7 100%);
+        }
+    </style>
+</head>
+
+<body class=" min-h-screen flex items-center justify-center px-4">
+    <div class="bg-white/60 p-8 max-w-md w-full backdrop-blur-lg shadow-2xl rounded-3xl">
+        <h2 class="text-2xl md:text-3xl font-semibold text-center text-blue-800 mb-6">Welcome to the Weather App</h2>
+
+        <form class="space-y-4">
+            <div>
+                <!-- <label for="city" class="block text-2xl font-medium text-gray-700">Enter City</label> -->
+                <input id="city" type="text" placeholder="Enter City Name"
+                    class="w-full p-3 sm:p-4 border-none rounded-xl text-lg sm:text-2xl bg-white/30 placeholder-black-300 text-black mb-3 sm:mb-4 outline-none" />
+            </div>
+            <button type="button" onclick="getWeather()"
+                class="w-full bg-blue-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-700 transition-all">
+                Get Temperature
+            </button>
+        </form>
+
+        <div id="weather-info" class="mt-6 text-center text-gray-700">
+            <!-- Weather info will appear here -->
+        </div>
+    </div>
+
+    <script src="Script.js"></script>
+</body>
+
+</html>
